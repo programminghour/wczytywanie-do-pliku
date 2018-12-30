@@ -1,0 +1,59 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream file;
+
+    file.open("exercise.txt",ios::in);
+//cout<<"a";
+    if(!file.good())
+        cout<<"Something went wrong...";
+//cout<<"b";
+    int i=0;
+
+    int Number;
+    char czar;
+
+    while(i<13)
+    {
+        cout<<czar;
+        file>>Number;cout<<Number;
+       // cout<<"c";
+        if(!file.fail())
+        {
+            i++;
+          //  cout<<"d";
+        }
+        else if(file.eof())
+            break;
+        else
+            file >> czar;
+    }
+//cout<<"e";
+    int Numbers[i];
+    int sum=0;
+
+    for( int j = 0;j<i ;j++)
+    {
+        file >> Number;
+        if(!file.fail())
+        {
+             Numbers[j]=Number;
+             sum++;
+        }
+        else
+            j--;
+    }
+
+
+
+
+
+   // for(int j = 0; j<i ; j++)
+   //     cout << Numbers[j] <<" ";
+    //cout<<sum;
+    return 0;
+}
